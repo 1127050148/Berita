@@ -2,7 +2,7 @@
 	$server = "localhost";
 	$username = "root";
 	$password = "";
-	$database = "db";
+	$database = "db_berita";
 	
 	// Koneksi dan memilih database di server
 	@mysql_connect($server,$username,$password) or die("Koneksi gagal");

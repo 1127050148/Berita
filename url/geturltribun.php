@@ -75,8 +75,10 @@
                 $url = $newItem->get_link();
             	// echo $url."<br><br>";
             }
-            $insert = "INSERT INTO url (link,sumber) values('".$url."','tribunnews.com')";
-           	mysql_query($insert) or die ("tidak dapat memasukkan data ke tabel");
+            	echo "<table border=1><tr><td>Link</td></tr>
+           	<tr><td>$url</td></tr></table><br><br><br>";
+            // $insert = "INSERT IGNORE INTO url (link,sumber) values('".$url."','tribunnews.com')";
+           	// mysql_query($insert) or die ("tidak dapat memasukkan data ke tabel");
         }
     }
 ?>

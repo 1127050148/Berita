@@ -88,10 +88,10 @@
             	// echo $url."<br><br>";
             }
 
-           	// echo "<table border=1><tr><td>Judul</td><td>Link</td><td>Deskripsi</td></tr>
-           	// <tr><td>$judul</td><td>$url</td><td>$term</td></tr></table><br><br><br>";
-           	$insert = "INSERT INTO url (link,sumber) values('".$url."','viva.co.id')";
-           	mysql_query($insert) or die ("tidak dapat memasukkan data ke tabel");
+           	echo "<table border=1><tr><td>Link</td></tr>
+           	<tr><td>$url</td></tr></table><br><br><br>";
+           	// $insert = "INSERT INTO url (link,sumber) values('".$url."','viva.co.id')";
+           	// mysql_query($insert) or die ("tidak dapat memasukkan data ke tabel");
         }
     }
 ?>

@@ -157,12 +157,24 @@
 		}
 	}
 
-	$query = mysql_query("SELECT * from url");
-	while ($r = mysql_fetch_array($query)) {
-		$url = $r['link'];
+	$select = mysql_query("SELECT count(*) as jum from url");
+	$jum = mysql_fetch_assoc($select); 
 
-		$key = new TextMiner;
-		$get = $key->addFile($url);
-		$process = $key->process(); echo $process;
+	if ($jum['jum'] > 0) {
+		$query = mysql_query("SELECT * from url");
+		while ($r = mysql_fetch_array($query)) {
+			$url = array("url"=>$r['link']);
+			foreach ($url as $site) {
+				$link = $site['url'];
+
+				$html = file_get_html($link);
+				foreach ($html->find($site['content']) as $element) {
+					# code...
+				}
+			}
+
+			$key = new TextMiner;
+			$get = $key->addFile($url);
+			$process = $key->process(); echo $process;
 	}
 ?>
